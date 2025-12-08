@@ -33,7 +33,44 @@ int main()
     return 0;
 
 
-
+int main() {
+    float željenaTežina, težinaKrumpira;
+    int brojKrumpira = 0;
+    int brojVrećica = 0;
+    
+    cout << "Unesite željenu težinu pune vrećice (u kilogramima, 0 za kraj): ";
+    cin >> željenaTežina;
+    
+    while (željenaTežina != 0) {
+        double težinaVrećice = 0;
+        brojKrumpira = 0;
+        
+        do {
+            cout << "Unesite težinu krumpira (u kilogramima): ";
+            cin >> težinaKrumpira;
+            težinaVrećice += težinaKrumpira;
+            brojKrumpira++;
+        } while (težinaVrećice < željenaTežina);
+        
+        double višakTežine = težinaVrećice - željenaTežina;
+        
+        cout << "Vrećica je napunjena s " << brojKrumpira << " krumpira.";
+        if (višakTežine > 0) {
+            cout << " Višak težine je " << višakTežine * 1000 << " grama." << endl;
+        } else {
+            cout << endl;
+        }
+        
+        brojVrećica++;
+        
+        cout << "Unesite željenu težinu pune vrećice (u kilogramima, 0 za kraj): ";
+        cin >> željenaTežina;
+    }
+    
+    cout << "Tog radnog dana napunjeno je ukupno " << brojVrećica << " vrećica." << endl;
+    
+    return 0;
+}
 
 
 
