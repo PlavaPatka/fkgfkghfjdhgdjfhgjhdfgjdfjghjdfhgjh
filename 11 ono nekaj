@@ -1,0 +1,100 @@
+int main() 
+{
+    char znak;
+    int slova = 0, brojevi = 0, zarezi = 0, operatori = 0;
+
+    do 
+    {
+        cin >> znak;
+
+        if ((znak >= 'A' && znak <= 'Z') || (znak >= 'a' && znak <= 'z'))
+        {
+            slova++;
+        }
+        else if (znak >= '0' && znak <= '9')
+        {
+            brojevi++;
+        }
+        else if (znak == ',') 
+        {
+            zarezi++;
+        }
+        else if (znak == '+' || znak == '-' || znak == '*' || znak == '/' || znak == '%') 
+        {
+            operatori++;
+        }
+    }
+    while (znak != '.' && znak != '!' && znak != '?');
+
+    cout << "Slova: " << slova << endl;
+    cout << "Brojevi: " << brojevi << endl;
+    cout << "Zarezi: " << zarezi << endl;
+    cout << "Operatori: " << operatori << endl;
+    return 0;
+
+
+
+
+
+
+
+
+    int main()
+{
+	int x=0;
+	int prvi = 0, drugi = 0, treci = 0, cetvrti = 0;
+	while (x < 5)
+	{
+		cin >> x;
+		if (x == 1)
+		{
+			prvi++;
+		}
+		if (x == 2)
+		{
+			drugi++;
+		}
+		if (x == 3)
+		{
+			treci++;
+		}
+		if (x == 4)
+		{
+			cetvrti++;
+		}
+	}
+		cout << "prvih :" << prvi << endl;
+		cout << "drugih :" << drugi << endl;
+		cout << "trecih :" << treci << endl;
+		cout << "cetvrtih :" << cetvrti << endl;
+		return 0;
+}
+
+
+	int main()
+	{
+		int x = 0;
+		int M = 0, S = 0, V = 0;
+		while (x < 4)
+		{
+			cin >> x;
+			if (x == 1)
+			{
+				M++;
+			}
+			if (x == 2)
+			{
+				S++;
+			}
+			if (x == 3)
+			{
+				V++;
+			}
+
+		}
+		cout << "malih :" << M << endl;
+		cout << "srednjih :" << S << endl;
+		cout << "velikih :" << V << endl;
+		return 0;
+	}
+
