@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char n;
+	cin >> n;
+	if (n == 'u')
+	{
+		cout << "------------------------------------------" << endl << "|" << " " << "|";
+		for (int i = 1; i <= 5; i++)
+		{
+			cout << "\t" << i << "|";
+		}
+		cout << endl << "------------------------------------------";
+		cout << endl;
+		for (int x = 1; x <= 1; x++)
+		{
+			for (int i = 1; i <= 7; i++)
+			{
+				cout << "|" << i << "|";
+
+				for (int h = 0; h <= 4; h++)
+				{
+					cout << "  " << "MAT" << " | ";
+				}
+				cout << endl;
+			}
+			for (int x = 1; x <= 1; x++)
+			{
+				for (int i = 1; i <= 7; i++)
+				{
+					cout << "|" << i << "|" << endl;
+				}
+			}
+		}
+	}
+	if (n == 'p')
+	{
+		cout << "------------------------------------------" << endl << "|" << " " << "|";
+		for (int i = 1; i <= 5; i++)
+		{
+			cout << "\t" << i << "|";
+		}
+		cout << endl << "------------------------------------------";
+		cout << endl;
+		for (int x = 1; x <= 1; x++)
+		{
+			for (int i = 1; i <= 7; i++)
+			{
+				cout << "|" << i << "|" << endl;
+			}
+		}
+		for (int x = 1; x <= 1; x++)
+		{
+			for (int i = 1; i <= 7; i++)
+			{
+				cout << "|" << i << "|";
+
+				for (int h = 0; h <= 4; h++)
+				{
+					cout << "  " << "MAT" << " | ";
+				}
+				cout << endl;
+			}
+		}
+	}
+}
+
