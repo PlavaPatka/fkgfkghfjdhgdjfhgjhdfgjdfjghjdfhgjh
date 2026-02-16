@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    string recenica;
+    getline(cin, recenica);
+    for (int i = 0; recenica[i] != '\0'; i++)
+    {
+        cout << recenica[i];
+        n++;
+        if (recenica[i] == ' ' || recenica[i] == '\0')
+        {
+            cout << "(" << n << ")";
+            n = 0;
+            cout << endl;
+        }
+    }
+    cout << "(" << n << ")";
+    n = 0;
+    cout << endl;
+}
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    int ovce = 0, vuki = 0;
+    string ograda;
+    getline(cin,ograda);
+    for (int i = 0; ograda[i] != '\0'; i++)
+    {
+        if (ograda[i] == 'O')
+        {
+            ovce++;
+        }
+        if (ograda[i] == 'V')
+        {
+            vuki++;
+        }
+        if (ograda[i] == '#')
+        {
+            if (vuki<ovce)
+            {
+                for (int n = 0; n != ovce; n++)
+                {
+                    cout << "O";
+                }
+                cout << "#";
+                ovce = 0;
+                vuki = 0;
+            }
+            if (vuki > ovce)
+            {
+                for (int n = 0; n != vuki; n++)
+                {
+                    cout << "V";
+                }
+                cout << "#";
+                ovce = 0;
+                vuki = 0;
+            }
+            else
+            {
+                for (int n = 0; n != vuki; n++)
+                {
+                    cout << "V";
+                }
+                cout << "#";
+                ovce = 0;
+                vuki = 0;
+            }
+        }
+
+    }
+    cout << " ";
+}
