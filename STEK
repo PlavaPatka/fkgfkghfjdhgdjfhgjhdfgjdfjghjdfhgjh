@@ -1,0 +1,45 @@
+
+
+#include <iostream>
+#include <stack>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+	stack<char>x;
+	char polje[500];
+	int palindrom = 1;
+	cin.getline(polje, 500);
+
+	if (strcmp(polje, "palindrom") == 0)
+	{
+		cout << "Palindrom";
+		return 0;
+	}
+
+	for (int i = 0; i < strlen(polje); i++)
+	{
+		x.push(polje[i]);
+	}
+
+	for (int i = 0; i < strlen(polje); i++)
+	{
+		if (polje[i] != x.top())
+		{
+			palindrom = 0;
+			break;
+		}
+		x.pop();
+	}
+
+	if (palindrom == 1)
+	{
+		cout << "Palindrom";
+	}
+	else
+	{
+		cout << "Nije Palindrom";
+	}
+	return 0;
+}
