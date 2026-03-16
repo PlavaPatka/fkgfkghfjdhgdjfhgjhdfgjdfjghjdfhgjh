@@ -43,3 +43,59 @@ int main()
 	}
 	return 0;
 }
+
+
+
+
+
+
+#include <iostream>
+#include <stack>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+	stack<char>obicne;
+	stack<char>viticaste;
+	stack<char>pikaste;
+	char polje[25];
+	int palindrom = 1;
+	cin.getline(polje, 25);
+	for (int i = 0; i < strlen(polje); i++)
+	{
+		if (polje[i] == '(')
+		{
+			obicne.push(polje[i]);
+		}
+		if (polje[i] == '[')
+		{
+			pikaste.push(polje[i]);
+		}
+		if (polje[i] == '{')
+		{
+			viticaste.push(polje[i]);
+		}
+		if (polje[i] == ')')
+		{
+			obicne.pop();
+		}
+		if (polje[i] == ']')
+		{
+			pikaste.pop();
+		}
+		if (polje[i] == '}')
+		{
+			viticaste.pop();
+		}
+	}
+	if (pikaste.empty() || obicne.empty() || viticaste.empty())
+	{
+		cout << "Balancirano je❤️";
+	}
+	else
+	{
+		cout << "neje";
+	}
+	return 0;
+}
