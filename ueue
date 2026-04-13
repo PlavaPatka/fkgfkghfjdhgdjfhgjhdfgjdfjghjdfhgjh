@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <queue>
+
+using namespace std;
+
+int main()
+{	
+	int n;
+	cin >> n;
+	queue<int> ueue;
+	for (int i = 0;i <= 1000;i++)
+	{
+		ueue.push(i);
+	}
+	for (int i = 0;i < 1000;i++)
+	{
+		if (ueue.front() > 99)
+		{
+			for (int h=0;h < n;h++)
+			{
+				cout << ueue.front() << " ";
+				ueue.pop();
+			}
+			break;
+		}
+		else
+		{
+			ueue.pop();
+		}
+	}
+	return 0; 
+}
