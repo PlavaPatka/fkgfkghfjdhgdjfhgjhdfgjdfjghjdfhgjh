@@ -1,0 +1,138 @@
+#include <list>
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string nekaj;
+    cin >> nekaj;
+
+    list<char> ae;
+    list<char> lista(nekaj.begin(), nekaj.end());
+
+    for (auto itr : lista)
+    {
+        if (itr == 'a' || itr == 'e' || itr == 'i' || itr == 'o' || itr == 'u')
+        {
+            ae.emplace_front(itr);
+        }
+    }
+
+    for (auto x : ae)
+        cout << x << " ";
+}
+
+
+
+#include <list>
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string nekaj;
+    cin >> nekaj;
+
+    list<char> ae;
+    list<char> bc;
+    list<char> lista(nekaj.begin(), nekaj.end());
+
+    for (auto itr : lista)
+    {
+        if (itr == 'a' || itr == 'e' || itr == 'i' || itr == 'o' || itr == 'u')
+        {
+            ae.emplace_front(itr);
+        }
+    }
+    ae.emplace_front('<');
+    ae.emplace_back('>');
+
+    for (auto itr : lista)
+    {
+        if (itr != 'a' && itr != 'e' && itr != 'i' && itr != 'o' && itr != 'u')
+        {
+            bc.emplace_front(itr);
+        }
+    }
+
+    bc.emplace_front('<');
+    bc.emplace_back('>');
+
+    for (auto x : ae)
+        cout << x << " ";
+
+    cout << endl;
+
+    for (auto x : bc)
+        cout << x << " ";
+
+    cout << endl;
+
+    cout << lista.size() << " " << ae.size() << " " << bc.size();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <list>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+    int main()
+    {
+        int je = 0;
+        int kolkoihje = 0;
+
+        srand(time(0));
+
+        while (1)
+        {
+            je = 0;
+
+            list<int> kockanje;
+            list<int> gambling;
+
+            for (int i = 0; i < 7; i++)
+            {
+                kockanje.push_back(rand() % 45 + 1);
+                gambling.push_back(rand() % 45 + 1);
+            }
+
+            for (auto itr : gambling)
+            {
+                for (auto x : kockanje)
+                {
+                    if (itr == x)
+                    {
+                        je++;
+                    }
+                }
+            }
+            if (je > 2)
+            {
+                break;
+            }
+
+            kolkoihje++;
+        }
+
+        cout << "Broj pokusaja: " << kolkoihje << endl;
+
+        return 0;
+    }
