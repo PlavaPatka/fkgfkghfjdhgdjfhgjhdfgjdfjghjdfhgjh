@@ -1,0 +1,74 @@
+#include <iostream>
+#include <list>
+#include <string>
+using namespace std;
+
+//Adriano Juras
+
+int main() 
+{
+    int ponavljanje;
+    cin >> ponavljanje;
+    list<string> l;
+    string naredba;
+    list<string> ispis;
+    list<string> ::iterator it;
+    for (int i = 0; i < ponavljanje; i++)
+    {
+        cin >> naredba;
+        if (naredba == "DODAJ")
+        {
+            cin >> naredba;
+            l.push_back(naredba);
+        }
+        else if (naredba == "OBRISI")
+        {
+            cin >> naredba;
+            for (it = l.begin(); it != l.end(); it++)
+            {
+                if (*it == naredba)
+                {
+                    it = l.erase(it);
+                }
+                if (it == l.end())
+                {
+                    break;
+                }
+            }
+        }
+        else if (naredba == "PRVI")
+        {
+            if (l.empty() == 1)
+            {
+                ispis.push_back("PRAZNO");
+            }
+            else
+            {
+                ispis.push_back(l.front());
+            }
+        }
+        else if (naredba == "ISPIS")
+        {
+            ispis.push_back("ispis");
+        }
+    }
+    cout << endl;
+    while (!ispis.empty())
+    {
+        if (ispis.front() == "ispis")
+        {
+            while (!l.empty())
+            {
+                cout << l.front();
+                l.pop_front();
+                cout << endl;
+            }
+        }
+        else
+        {
+            cout << ispis.front() << " ";
+            ispis.pop_front();
+        }
+    }
+    return 0;
+}
